@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      try {
+        var mode = localStorage.getItem("ygh-theme");
+        if (mode === "day" || mode === "night") {
+          document.documentElement.setAttribute("data-theme", mode);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title>yurKing</title>
+  <meta name="description" content="Reading, notes, and quiet tools.">
+  <link rel="canonical" href="https://yurkingw.github.io/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <a class="wordmark" href="/">yurKing</a>
+      <div class="seg" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="system" aria-pressed="true">Auto</button>
+        <span class="seg-gap" aria-hidden="true">·</span>
+        <button type="button" data-theme-set="day" aria-pressed="false">Day</button>
+        <span class="seg-gap" aria-hidden="true">·</span>
+        <button type="button" data-theme-set="night" aria-pressed="false">Night</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h1>yurKing</h1>
+    <p class="lede">Reading, notes, and quiet tools.</p>
+    <nav class="entries" aria-label="Entries">
+      <a class="entry" href="/x-good-reads/">
+        <span class="entry-title">Good Reads</span>
+        <span class="entry-hint" aria-hidden="true">→</span>
+        <span class="entry-blurb">One X post, one page.</span>
+      </a>
+      <a class="entry is-soon" href="/briefings/" aria-disabled="true">
+        <span class="entry-title">Briefings</span>
+        <span class="entry-blurb">Short intelligence notes.</span>
+        <span class="entry-meta">Coming soon</span>
+      </a>
+    </nav>
+  </main>
+  <footer class="colophon">
+    <p>Independent pages. Sources stay with their authors.</p>
+  </footer>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var storageKey = "ygh-theme";
+      var buttons = document.querySelectorAll(".seg button[data-theme-set]");
+
+      function read() {
+        try {
+          var mode = localStorage.getItem(storageKey);
+          if (mode === "day" || mode === "night" || mode === "system") return mode;
+        } catch (e) {}
+        return "system";
+      }
+
+      function apply(mode, persist) {
+        if (mode === "day" || mode === "night") root.setAttribute("data-theme", mode);
+        else root.removeAttribute("data-theme");
+        buttons.forEach(function (button) {
+          button.setAttribute(
+            "aria-pressed",
+            button.getAttribute("data-theme-set") === mode ? "true" : "false"
+          );
+        });
+        if (persist) {
+          try { localStorage.setItem(storageKey, mode); } catch (e) {}
+        }
+      }
+
+      apply(read(), false);
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          apply(button.getAttribute("data-theme-set"), true);
+        });
+      });
+
+      document.querySelectorAll("a.entry.is-soon").forEach(function (link) {
+        function block(event) {
+          event.preventDefault();
+        }
+        link.addEventListener("click", block);
+        link.addEventListener("auxclick", block);
+      });
+    })();
+  </script>
+</body>
+</html>
