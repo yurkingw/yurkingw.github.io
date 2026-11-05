@@ -1,4 +1,4 @@
-# yurKing
+# Veiled Empyrean
 
 Public root of <https://yurkingw.github.io/>.
 
