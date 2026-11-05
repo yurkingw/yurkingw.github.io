@@ -42,10 +42,10 @@
         <span class="entry-hint" aria-hidden="true">→</span>
         <span class="entry-blurb">One X post, one page.</span>
       </a>
-      <a class="entry is-soon" href="/briefings/" aria-disabled="true">
+      <a class="entry" href="/briefings/">
         <span class="entry-title">Briefings</span>
+        <span class="entry-hint" aria-hidden="true">→</span>
         <span class="entry-blurb">Short intelligence notes.</span>
-        <span class="entry-meta">Coming soon</span>
       </a>
     </nav>
   </main>
@@ -85,14 +85,6 @@
         button.addEventListener("click", function () {
           apply(button.getAttribute("data-theme-set"), true);
         });
-      });
-
-      document.querySelectorAll("a.entry.is-soon").forEach(function (link) {
-        function block(event) {
-          event.preventDefault();
-        }
-        link.addEventListener("click", block);
-        link.addEventListener("auxclick", block);
       });
     })();
   </script>

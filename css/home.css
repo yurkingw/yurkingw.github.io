@@ -327,15 +327,6 @@ h1 {
   color: var(--ink);
 }
 
-.entry.is-soon {
-  cursor: default;
-}
-
-.entry.is-soon:hover,
-.entry.is-soon:focus-visible {
-  background: transparent;
-}
-
 .colophon {
   margin-top: var(--s-8);
   padding-bottom: var(--s-8);

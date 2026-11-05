@@ -2,7 +2,7 @@
 
 Public root of <https://yurkingw.github.io/>.
 
-This is an editorial foyer: a name, one line, and two entries. **Good Reads** links to the existing archive at `/x-good-reads/`. **Briefings** reserves `/briefings/` and is marked coming soon. It does not publish briefing posts.
+This is an editorial foyer: a name, one line, and two entries. **Good Reads** links to the existing archive at `/x-good-reads/`. **Briefings** links to `/briefings/`. This repository does not publish briefing posts.
 
 ## GitHub Pages
 
