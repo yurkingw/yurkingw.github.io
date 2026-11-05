@@ -35,10 +35,12 @@ need "$html" "One X post, one page."
 need "$html" 'href="/x-good-reads/"'
 need "$html" "Briefings"
 need "$html" "Short intelligence notes."
-need "$html" "Coming soon"
+need "$html" 'class="entry" href="/briefings/"'
 need "$html" 'href="/briefings/"'
-need "$html" "is-soon"
-need "$html" 'aria-disabled="true"'
+
+forbid "$html" "Coming soon"
+forbid "$html" "is-soon"
+forbid "$html" "aria-disabled"
 need "$html" "Independent pages. Sources stay with their authors."
 need "$html" 'localStorage.getItem("ygh-theme")'
 need "$html" 'var storageKey = "ygh-theme";'
