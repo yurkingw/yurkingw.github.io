@@ -25,8 +25,10 @@ forbid() {
   fi
 }
 
-need "$html" ">yurKing</a>"
-need "$html" "<h1>yurKing</h1>"
+need "$html" "<title>Veiled Empyrean</title>"
+need "$html" ">Veiled Empyrean</a>"
+need "$html" "<h1>Veiled Empyrean</h1>"
+forbid "$html" "yurKing"
 need "$html" "Reading, notes, and quiet tools."
 need "$html" "Good Reads"
 need "$html" "One X post, one page."
