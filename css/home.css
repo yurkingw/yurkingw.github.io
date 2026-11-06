@@ -27,30 +27,30 @@
   --s-6: 32px;
   --s-7: 48px;
   --s-8: 64px;
-  --t1-size: 32px;
-  --t1-weight: 600;
-  --t1-lh: 1.15;
+  --t1-size: 30px;
+  --t1-weight: 650;
+  --t1-lh: 1.2;
   --t1-track: -0.03em;
-  --t2-size: 24px;
-  --t2-weight: 560;
-  --t2-lh: 1.25;
+  --t2-size: 20px;
+  --t2-weight: 600;
+  --t2-lh: 1.3;
   --t2-track: -0.02em;
-  --t3-size: 17px;
+  --t3-size: 15px;
   --t3-weight: 400;
-  --t3-lh: 1.7;
+  --t3-lh: 1.65;
   --t3-track: 0;
-  --t4-size: 15px;
+  --t4-size: 14px;
   --t4-weight: 450;
   --t4-lh: 1.5;
   --t4-track: 0;
-  --t5-size: 14px;
-  --t5-weight: 520;
+  --t5-size: 13px;
+  --t5-weight: 560;
   --t5-lh: 1.4;
   --t5-track: 0;
-  --t6-size: 12px;
+  --t6-size: 11px;
   --t6-weight: 500;
-  --t6-lh: 1.3;
-  --t6-track: 0.02em;
+  --t6-lh: 1.35;
+  --t6-track: 0.04em;
   --bg: #f7f7f8;
   --surface: #ffffff;
   --surface-soft: #f0f0f1;
@@ -68,7 +68,8 @@
   --radius-pill: 999px;
   --shadow: none;
   --measure-home: 36rem;
-  --pad-x: var(--s-4);
+  --pad-x: var(--s-5);
+  --inset-row: var(--s-4);
   --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", "Helvetica Neue",
     "PingFang SC", "Noto Sans SC", Arial, sans-serif;
 }
@@ -109,8 +110,9 @@
 
 @media (min-width: 640px) {
   :root {
-    --t1-size: 40px;
-    --t3-size: 18px;
+    --t1-size: 36px;
+    --t2-size: 22px;
+    --t3-size: 16px;
   }
 }
 
@@ -323,7 +325,7 @@ h1 {
   row-gap: var(--s-1);
   align-items: baseline;
   padding-block: var(--s-5);
-  padding-inline: 0;
+  padding-inline: var(--inset-row);
   border-bottom: 1px solid var(--line);
   color: inherit;
   text-decoration: none;
@@ -421,7 +423,7 @@ h1 {
 }
 
 @media (max-width: 390px) {
-  :root { --pad-x: var(--s-3); }
+  :root { --pad-x: var(--s-4); }
 
   /* Brand on row 1. Theme pills wrap onto their own line instead of clipping. */
   .top {
